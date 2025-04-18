@@ -1,6 +1,7 @@
 const player = document.querySelector("#player");
 const game = document.querySelector("#game");
 const statsContainer = document.getElementById("stats-display");
+const body = document.querySelector("body");
 
 // Constantes du jeu
 const startingPlayerX = 50;
@@ -63,11 +64,19 @@ document.querySelectorAll(".character").forEach((char) => {
 
 // Fonction pour démarrer le jeu
 function startGame() {
+    updateBackground();
     playCharSound();
     updatePlayer();
     loopRocketGenerator();
     updateHUD();
     scoreUpdator();
+}
+
+// Fonction pour mettre à jour l'arrière-plan
+function updateBackground() {
+    if (player.classList.contains("bowser")) body.style.backgroundImage = 'url("assets/background-bowser.jpg")';
+    if (player.classList.contains("pikachu")) body.style.backgroundImage = 'url("assets/background-pikachu.jpg")';
+    if (player.classList.contains("darth-vader")) body.style.backgroundImage = 'url("assets/background-darth-vader.jpg")';
 }
 
 // Fonction pour jouer le son du personnage
