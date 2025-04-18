@@ -1,0 +1,251 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("assets/body-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#game {
+    width: 960px;
+    height: 540px;
+    color: black;
+    background-image: url("assets/background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: black 5px solid;
+}
+
+#player {
+    width: 120px;
+    height: 120px;
+    /* background-image: url("assets/bowser.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 5px;
+    left: 50px;
+}
+
+.rocket {
+    width: 60px;
+    height: 30px;
+    background-image: url("assets/rocket.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+#game-over-screen h1 {
+    font-size: 48px;
+    padding: 10px 20x;
+    color: white;
+    text-align: center;
+}
+
+#game-over-screen button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#lives-display, #score-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#score-display {
+    left: auto;
+    right: 10px;
+}
+
+.life-icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#pause-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 500px;
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+#pause-screen h1 {
+    font-size: 48px;
+    color: white;
+    text-align: center;
+}
+
+#pause-screen button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cooldown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    color: orange;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+#start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: black;
+}
+
+#start-screen h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.character {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#character-selection {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.character.selected {
+    border: 2px solid black;
+}
+
+.character[data-character="bowser"] { background-image: url("assets/bowser.png"); }
+.character[data-character="pikachu"] { background-image: url("assets/pikachu.png"); }
+.character[data-character="darth-vader"] { background-image: url("assets/darth-vader.png"); } 
+
+.bowser { background-image: url("assets/bowser.png"); }
+.pikachu { background-image: url("assets/pikachu.png"); }
+.darth-vader { background-image: url("assets/darth-vader.png"); }
+
+#score-popup-container {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.score-popup {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+    animation: popupFade 2s ease-out forwards;
+    text-shadow: 1px 1px 3px #000;
+}
+
+@keyframes popupFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+#return-home {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#return-home a {
+    text-decoration: none;
+    color: white;
+}

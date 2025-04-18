@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <mata name="author" content="Guilliam MORISSET">
+    <meta name="description" content="Little game using HTML, CSS, and JavaScript.">
+    <title>Mini jeu JS from scratch</title>
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Mini jeu JS from scratch</h1>
+        <div id="character-selection">
+            <div class="character" data-character="bowser"></div>
+            <div class="character" data-character="pikachu"></div>
+            <div class="character" data-character="darth-vader"></div>
+        </div>
+        <button id="start-btn">Start Game</button>
+
+        <div id="menu-stats-display">
+            <h2>Statistiques</h2>
+            <div id="menu-stats-list"></div>
+        </div>
+    </div>
+
+    <div id="game">
+        <div id="stats-display" class="hidden">
+            <h2>Statistiques</h2>
+            <div id="stats-list"></div>
+        </div>
+
+        <div id="lives-display"></div>
+
+        <div id="score-display"></div>
+
+        <div id="score-popup-container"></div>
+
+        <div id="player" class="bowser"><div id="fighting-timer" class="cooldown hidden"></div></div>
+
+        <div id="pause-screen" class="hidden">
+            <h1 id="pause-text">Game Paused</h1>
+            <button id="resume-button">Resume</button>
+            <button id="back-home-button" onclick="location.reload();">Home</button>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <h1 id="game-over-text">Game Over</h1>
+            <button id="restart-button">Restart</button>
+            <button id="back-home-button" onclick="location.reload();">Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
