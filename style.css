@@ -156,13 +156,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+    background-image: url("assets/main-menu-background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    color: black;
+    color: white;
 }
 
 #start-screen h1 {
@@ -192,7 +195,7 @@ body {
 }
 
 .character.selected {
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .character[data-character="bowser"] { background-image: url("assets/bowser.png"); }
